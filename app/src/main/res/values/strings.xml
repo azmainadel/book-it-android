@@ -1,6 +1,26 @@
 <resources>
     <string name="app_name">BookIt!</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="dateBus">Select Date</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="fromNames">
+        <item>Dhaka</item>
+        <item>Chittagong</item>
+        <item>Sylhet</item>
+        <item>Khulna</item>
+        <item>Bogra</item>
+    </string-array>
+
+    <string-array name="toNames">
+        <item>Chittagong</item>
+        <item>Sylhet</item>
+        <item>Khulna</item>
+        <item>Bogra</item>
+        <item>Dhaka</item>
+    </string-array>
+
 </resources>
