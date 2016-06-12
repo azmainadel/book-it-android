@@ -1,5 +1,6 @@
 package com.durbin.xyntherys.bookit;
 
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 /**
@@ -15,6 +17,7 @@ import android.widget.Spinner;
 public class BusBookFragment extends Fragment {
     Spinner spinnerFrom;
     Spinner spinnerTo;
+    EditText editText;
 
     public BusBookFragment() {
         // Required empty public constructor
@@ -32,6 +35,22 @@ public class BusBookFragment extends Fragment {
 
         spinnerFrom = (Spinner) view.findViewById(R.id.fromPicker);
         spinnerTo = (Spinner) view.findViewById(R.id.toPicker);
+        editText = (EditText) view.findViewById(R.id.selectDateBus);
+
+
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v , boolean hasFocus) {
+                if(hasFocus) {
+                    DateDialog dialog = new DateDialog(v);
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+
+                    dialog.show(ft,"DatePicker");
+
+                }
+
+            }
+        });
 
         ArrayAdapter<CharSequence> sourceList = ArrayAdapter.createFromResource(getActivity(), R.array.fromNames,
                 android.R.layout.simple_spinner_item);
