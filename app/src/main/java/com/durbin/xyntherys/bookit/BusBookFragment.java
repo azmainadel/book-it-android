@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link Fragment} subclass..
  */
 public class BusBookFragment extends Fragment {
     Spinner spinnerFrom;
